@@ -54,7 +54,7 @@ class GameViewController: UIViewController {
         cameraNode.camera = SCNCamera()
         
         //3
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 10)
+        cameraNode.position = SCNVector3(x: 0, y: 5, z: 10)
         
         //4
         scnScene.rootNode.addChildNode(cameraNode)
