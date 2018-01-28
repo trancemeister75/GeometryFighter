@@ -96,7 +96,7 @@ class GameViewController: UIViewController {
         let position = SCNVector3(x: 0.05, y: 0.05, z: 0.05)
         
         geometryNode.physicsBody?.applyForce(force, at: position, asImpulse: true)
-        
+        //To-Do
         scnScene.rootNode.addChildNode(geometryNode)
     }
 }
