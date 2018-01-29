@@ -87,6 +87,7 @@ class GameViewController: UIViewController {
         }
         let geometryNode = SCNNode(geometry: geometry)
         geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+        geometry.materials.first?.diffuse.contents = UIColor.random()
         
         let randomX = Float.random(min: -2, max: 2)
         let randomY = Float.random(min: 10, max: 18)
