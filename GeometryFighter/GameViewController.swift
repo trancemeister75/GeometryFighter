@@ -38,6 +38,7 @@ class GameViewController: UIViewController {
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         scnView.delegate = self
+        scnView.isPlaying = true
     }
     
     func setupScene()
@@ -103,6 +104,17 @@ class GameViewController: UIViewController {
         scnScene.rootNode.addChildNode(geometryNode)
     }
     
+    func cleanScene()
+    {
+        for node in scnScene.rootNode.childNodes
+        {
+            if node.presentation.position.y < -2
+            {
+                node.removeFromParentNode()
+            }
+        }
+    }
+    
 }
 
 extension GameViewController : SCNSceneRendererDelegate {
@@ -112,5 +124,6 @@ extension GameViewController : SCNSceneRendererDelegate {
                 spawnShape()
                 spawnTime = time + TimeInterval(Float.random(min: 0.2, max: 1.5))
         }
+        cleanScene()
         }
 }
